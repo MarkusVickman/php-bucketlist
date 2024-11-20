@@ -40,7 +40,7 @@ include("includes/config.php");
     <article class="panel-block">
         <div class="control">
             <h3 class="subtitle">Hur det var att lösa uppgiften med PHP</h3>
-            <p class="">Att löra uppgiften med PHP var både ris och ros. Det strulade mycket i starten att få PHP att fungera korrekt. Men PHP blir väldigt tydligt och är lättarbetat då script och HTML kan blandas.
+            <p class="">Att lösa uppgiften med PHP var både ris och ros. Det strulade mycket i starten att få PHP att fungera korrekt. Men PHP blir väldigt tydligt och är lättarbetat då script och HTML kan blandas.
                 Det modulära upplägget med att kod från filer kan implementeras direkt i kodflödet var väldigt uppskattat då det endast behövdes en header och en footer för båda sidorna. Jag lär mig fortfarande objectorienterad
                 programmering, men jag uppskattade att det gick att typsäkra värden in till och från metoder. Jag saknar dock hur lätt JavaScript kan hämta data och manupulera värden dynamiskt i HTML och det går även att göra på 
                 flera olika sätt med JavaScript.
@@ -51,7 +51,7 @@ include("includes/config.php");
 </section>
 
 <!-- Section panel with Picture of UML diagram -->
-<section class="panel container is-max-desktop mt-6">
+<section class="panel container is-max-desktop mt-6 has-background-white">
     <h2 class="panel-heading title">UML-diagram</h2>
 
     <div class="panel-block">
@@ -62,7 +62,7 @@ include("includes/config.php");
 </section>
 
 <!-- Section panel with Picture of ER diagram -->
-<section class="panel container is-max-desktop mt-6 mb-6">
+<section class="panel container is-max-desktop mt-6 mb-6 has-background-white">
     <h2 class="panel-heading title">ER-diagram</h2>
 
     <div class="panel-block">
