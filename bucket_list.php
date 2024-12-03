@@ -18,7 +18,7 @@ include("includes/config.php");
   <div class="panel-block">
     <div class="control">
 
-      <form method="post" class="" action=""> <!-- action="bucket_list.php" -->
+      <form method="post" class=""> <!-- action="bucket_list.php" -->
         <div class="field">
           <label class="label" for="name">Namn</label>
           <div class="control">
@@ -29,7 +29,7 @@ include("includes/config.php");
         <div class="field">
           <label class="label" for="description">Beskrivning</label>
           <div class="control">
-            <textarea class="textarea" placeholder="Beskriv vad du vill göra." id="description" name="description" required></textarea>
+            <textarea class="textarea" placeholder="Beskriv vad du vill göra." id="description" name="description"></textarea>
           </div>
         </div>
 
@@ -63,7 +63,6 @@ include("includes/config.php");
       </form>
     </div>
   </div>
-  </div>
 </section>
 
 <!-- PHP script that instansiate the class/db-connection and checks if submit or update is pressed -->
@@ -83,7 +82,7 @@ if (isset($_POST['submit'])) {
     echo '<meta http-equiv="refresh" content="0">';
     echo '<p class="has-text-centered">Inlägget sparat i din bucket-list.</p>';
   } else {
-    echo '<p style="color:red" class="has-text-centered">Data saknas. Fyll i alla fält!</p>';
+    echo '<p style="color:red" class="has-text-centered">Name, beskrivning och prioritet måste vara ifyllda!</p>';
   }
 }
 
@@ -120,7 +119,7 @@ if (isset($_POST['update'])) {
       echo '<article class="panel-block">
         <div class="control">
         <form method="post">
-      <h3 class="title is-size-4">' . htmlentities($bucket['POST_NAME'], ENT_QUOTES, 'UTF-8') . ' | Prio ' . htmlentities($bucket['POST_PRIORITY'], ENT_QUOTES, 'UTF-8') . '</h2>
+      <h3 class="title is-size-4">' . htmlentities($bucket['POST_NAME'], ENT_QUOTES, 'UTF-8') . ' | Prio ' . htmlentities($bucket['POST_PRIORITY'], ENT_QUOTES, 'UTF-8') . '</h3>
       <p class="subtitle is-size-6 mt-2">
         ' . htmlentities($bucket['POST_DESCRIPTION'], ENT_QUOTES, 'UTF-8') . '
       </p>
@@ -145,7 +144,7 @@ if (isset($_POST['update'])) {
       echo '<article class="panel-block">
         <div class="control">
       <form method="post">
-      <h3 class="title is-size-4">' . htmlentities($bucket['POST_NAME'], ENT_QUOTES, 'UTF-8') . ' | Prio ' . htmlentities($bucket['POST_PRIORITY'], ENT_QUOTES, 'UTF-8') . '</h2>
+      <h3 class="title is-size-4">' . htmlentities($bucket['POST_NAME'], ENT_QUOTES, 'UTF-8') . ' | Prio ' . htmlentities($bucket['POST_PRIORITY'], ENT_QUOTES, 'UTF-8') . '</h3>
       <p class="subtitle is-size-6 mt-2">
         ' . htmlentities($bucket['POST_DESCRIPTION'], ENT_QUOTES, 'UTF-8') . '
       </p>
@@ -162,23 +161,20 @@ if (isset($_POST['update'])) {
   //Checks if button for delete or done is pressed and send the relevant id to the corresponding method
   if (isset($_POST['delete'])) {
     $id = intval($_POST['delete']);
-    if($fetchBucketList->DeleteBucketList($id))
-    {
+    if ($fetchBucketList->DeleteBucketList($id)) {
       echo '<meta http-equiv="refresh" content="0">';
     }
   }
 
   if (isset($_POST['done'])) {
     $id = intval($_POST['done']);
-    if($fetchBucketList->CompleteBucketList($id))
-    {
+    if ($fetchBucketList->CompleteBucketList($id)) {
       echo '<meta http-equiv="refresh" content="0">';
     }
   }
   ?>
 
-</section>
 
-<!-- Includes footer -->
-<?php
-include("includes/footer.php");
+  <!-- Includes footer -->
+  <?php
+  include("includes/footer.php");
